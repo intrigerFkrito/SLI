@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.sli">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.project.menu.AddNotes"
+            android:theme="@style/AppTheme.newsWebView"
+            android:label="Edit Note"/>
+        <activity
+            android:name="com.project.menu.Note"
+            android:theme="@style/AppTheme.newsWebView" />
+        <activity
+            android:name="com.project.internet.NewsWebView"
+            android:label="GLOBAL NEWS+"
+            android:theme="@style/AppTheme.newsWebView" />
+        <activity android:name="com.project.menu.GiveLike" />
+        <activity
+            android:name="com.project.menu.TransLongText"
+            android:label="长文本翻译" />
+        <activity
+            android:name=".LauncherActivity"
+            android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.main" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.login" />
+    </application>
+
+</manifest>

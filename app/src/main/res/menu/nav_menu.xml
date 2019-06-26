@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_use">
+        <item
+        android:id="@+id/link"
+        android:icon="@drawable/ic_menu_action_link"
+        android:title="登录" />
+        <item
+            android:id="@+id/night_mode"
+            android:icon="@drawable/ic_menu_action_night"
+            android:title="夜间模式"/>
+        <item
+            android:id="@+id/management"
+            android:icon="@drawable/ic_menu_action_management"
+            android:title="小目标"/>
+        <item
+            android:id="@+id/note"
+            android:icon="@drawable/ic_menu_action_note"
+            android:title="笔记"/>
+        <item
+            android:id="@+id/text_translate"
+            android:icon="@drawable/ic_menu_action_longtext"
+            android:title="长文本翻译"/>
+
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/group_shared">
+        <item
+            android:id="@+id/add_friend"
+            android:icon="@drawable/ic_menu_action_addfriend"
+            android:title="邀请小伙伴一起学习"/>
+        <item
+            android:id="@+id/command"
+            android:icon="@drawable/ic_menu_action_command"
+            android:title="给我们点个赞吧"/>
+
+    </group>
+</menu>
