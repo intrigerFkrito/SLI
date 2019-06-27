@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.project.internet.NewsWebView;
+import com.project.menu.AddNotes;
 import com.project.menu.Note;
 import com.project.resource.englishnew.EnglishNewAdapter;
 import com.project.resource.englishnew.EnglishNews;
@@ -150,6 +151,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                     tag = 0;
                     holder.line.setVisibility(View.GONE);
                     holder.menu.setVisibility(View.GONE);
+                }
+                else{
+                    int position = holder.getAdapterPosition();
+                    Intent intent = new Intent(Note.note, AddNotes.class);
+                    intent.putExtra("position",position);
+                    context.startActivity(intent);
+                    Note.note.finish();
                 }
             }
         });

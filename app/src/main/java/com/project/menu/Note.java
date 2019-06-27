@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -72,7 +73,7 @@ public class Note extends AppCompatActivity {
             Log.d("MX",note.getBody());
         }
         RecyclerView recyclerView = findViewById(R.id.menu_note_recycle);
-        GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.mainActivity,2);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new NoteAdapter(notesList);
         recyclerView.setAdapter(adapter);
