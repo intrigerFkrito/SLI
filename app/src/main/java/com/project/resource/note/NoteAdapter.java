@@ -104,6 +104,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 holder.menu.setVisibility(View.VISIBLE);
                 holder.line.setVisibility(View.VISIBLE);
 
+
                 holder.delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

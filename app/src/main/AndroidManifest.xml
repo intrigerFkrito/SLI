@@ -14,9 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.project.menu.AddNotes"
-            android:theme="@style/AppTheme.newsWebView"
-            android:label="Edit Note"/>
+        <activity
+            android:name="com.project.menu.AddNotes"
+            android:label="Edit Note"
+            android:theme="@style/AppTheme.newsWebView" />
         <activity
             android:name="com.project.menu.Note"
             android:theme="@style/AppTheme.newsWebView" />

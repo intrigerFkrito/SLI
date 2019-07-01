@@ -29,4 +29,12 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </WebView>
+
+    <ProgressBar
+        android:id="@+id/news_webview_progress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        />
+
 </android.support.design.widget.CoordinatorLayout>

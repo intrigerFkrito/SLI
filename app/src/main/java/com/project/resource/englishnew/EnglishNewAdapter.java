@@ -1,11 +1,15 @@
 package com.project.resource.englishnew;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +97,14 @@ public class EnglishNewAdapter extends RecyclerView.Adapter<EnglishNewAdapter.Vi
                 EnglishNews englishNews = NewList.get(position);
                 Intent intent = new Intent(MainActivity.mainActivity, NewsWebView.class);
                 intent.putExtra("url",englishNews.getUrl());
-                context.startActivity(intent);
+
+                //过渡动画 2019/06/27
+                Slide slide = new Slide(Gravity.LEFT);
+                slide.setDuration(1000);
+                slide.setInterpolator(new FastOutSlowInInterpolator());
+                MainActivity.mainActivity.getWindow().setExitTransition(slide);
+                MainActivity.mainActivity.getWindow().setAllowEnterTransitionOverlap(false);
+                context.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.mainActivity).toBundle());
             }
         });
 

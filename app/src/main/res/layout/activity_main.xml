@@ -102,7 +102,7 @@
                     android:textSize="15sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:gravity="center"
-
+                    android:layout_marginRight="5dp"
                     android:background="@drawable/login_password_button"/>
 
             </LinearLayout>

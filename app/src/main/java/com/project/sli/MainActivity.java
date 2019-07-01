@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     private void initViews(){
+        //默认关闭软键盘
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         Toolbar toolbar =  findViewById(R.id.toolbar_main);
         final EditText search = findViewById(R.id.main_search);
@@ -75,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         final NavigationView navigationView = findViewById(R.id.nav_view);
         //下拉刷新
         swipeRefresh = findViewById(R.id.main_refresh);
-
 
 
         swipeRefresh.setColorSchemeColors(getColor(R.color.colorPrimary));
@@ -199,9 +201,9 @@ public class MainActivity extends AppCompatActivity {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
+                check.startAnimation(animation);
                 if (1 == tagCountryRecycleView) {
-                    Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
-                    check.startAnimation(animation);
                     tagCountryRecycleView = 0;
                     recycleCountry.setVisibility(View.GONE);
                 }

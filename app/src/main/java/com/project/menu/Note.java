@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -78,4 +79,5 @@ public class Note extends AppCompatActivity {
         adapter = new NoteAdapter(notesList);
         recyclerView.setAdapter(adapter);
     }
+
 }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,7 +39,6 @@ public class AddNotes extends AppCompatActivity {
         setContentView(R.layout.activity_add_notes);
         Intent intent = getIntent();
         position = intent.getIntExtra("position",-1);
-
         initViews();
         if (position != -1){
             showContent();
@@ -89,6 +89,14 @@ public class AddNotes extends AppCompatActivity {
         defaultPriority = note.getPriority();
         head.setText(defaultHead);
         body.setText(defaultBody);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Intent intent = new Intent(AddNotes.this,Note.class);
+        startActivity(intent);
+        finish();
+        return super.onKeyDown(keyCode, event);
     }
 }
 
